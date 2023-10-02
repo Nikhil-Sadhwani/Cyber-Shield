@@ -27,7 +27,7 @@ export default function Signup() {
     e.preventDefault();
     if(inputs.name !== "" && inputs.email !== "" && inputs.password !== ""){
 
-      await axios.post("http://localhost:3001/signup" , inputs).then((response) => {
+      await axios.post("https://cyber-shield-backend.onrender.com/signup" , inputs).then((response) => {
           const resMsg = response.data['message'];
           if(resMsg === "Successfully Sign up"){
             AObj.showAlert(resMsg , "Success" , "green");
