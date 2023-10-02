@@ -8,11 +8,20 @@ const dictionaryRouter  = require('./routers/dictionary');
 const reviewRouter  = require('./routers/review');
 const reportRouter = require('./routers/reporting');
 
+require('dotenv').config();
+
 const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+const PORT = process.env.PORT || 3001;
+
+app.use(cors(
+    {
+        origin: "*",
+        credentials: true
+    }
+));
 
 app.use(express.json());
 
@@ -24,8 +33,8 @@ app.use("/review" , reviewRouter);
 app.use("/report" , reportRouter);
 
 //  Connecting MongoDB please enter your mongodb URL here and create collections of name : users , reviews , dictionaries , reports 
-mongoose.connect("Enter_Your_MongoDB_URL");
+mongoose.connect(process.env.MONGODB_URL);
 
-app.listen(3001 , ()=>{
+app.listen(PORT , ()=>{
     console.log("Server is running");
 });
