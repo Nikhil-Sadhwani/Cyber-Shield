@@ -85,7 +85,7 @@ export default function ToolsDetail() {
                         </p>
 
                         <Link key={key} to={tool.url}>
-                          <p className="mt-1 text-sm text-gray-700 text-blue-500">
+                          <p className="mt-1 text-sm  text-blue-500">
                             URL : {tool.url}
                           </p>
                         </Link>
@@ -98,7 +98,7 @@ export default function ToolsDetail() {
           {toolReviews.length === 0 ? (
             <h2 style={{ textAlign: "center", color: "grey" }}>No Reviews</h2>
           ) : (
-            <div style={{ display: "grid", grid: "200px / auto auto auto" }}>
+            <div style={{ display: "flex", flexWrap: "wrap" }}>
               {toolReviews.map((tool, key) => {
                 return (
                   <article
