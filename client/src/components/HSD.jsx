@@ -14,7 +14,7 @@ function HSD() {
   useEffect(() => {
     // eslint-disable-next-line
     axios
-      .get("http://localhost:3001/dictionary")
+      .get("https://cyber-shield-backend.onrender.com/dictionary")
       .then((response) => {
         setWords(response.data.data);
       })
