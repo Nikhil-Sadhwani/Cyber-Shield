@@ -18,7 +18,7 @@ export default function ToolsDetail() {
   useEffect(() => {
     // eslint-disable-next-line
     axios
-      .get(`http://localhost:3001/review/${toolName}`)
+      .get(`https://cyber-shield-backend.onrender.com/review/${toolName}`)
       .then((response) => {
         setToolReviews(response.data.data);
       })
@@ -40,7 +40,7 @@ export default function ToolsDetail() {
         comment: textAreaVal,
       };
       await axios
-        .post("http://localhost:3001/review", data)
+        .post("https://cyber-shield-backend.onrender.com/review", data)
         .then((response) => {
           AObj.showAlert(response.data.message, "Success", "green");
           setToolReviews([...toolReviews, data]);
