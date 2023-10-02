@@ -18,7 +18,7 @@ function Report() {
   const handleReport = async (e) => {
     e.preventDefault();
     await axios
-      .post("http://localhost:3001/report", data)
+      .post("https://cyber-shield-backend.onrender.com/report", data)
       .then((response) => {
         AObj.showAlert(response.data.message, "Success", "green");
         setData({
