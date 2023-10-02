@@ -24,7 +24,7 @@ export default function Signin() {
     e.preventDefault();
     if (inputs.email !== "" && inputs.password !== "") {
       await axios
-        .post("http://localhost:3001/signin", inputs)
+        .post("https://cyber-shield-backend.onrender.com/signin", inputs)
         .then((response) => {
           const resMsg = response.data.message;
           if (resMsg === "User has Successfully loged in") {
